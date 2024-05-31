@@ -16,3 +16,5 @@
     + [Decision and Classification Trees, Clearly Explained!!!](https://www.youtube.com/watch?v=_L39rN6gz7Y)
 + Clustering: K-means
 + Regression: Gradient Descend
++ Dimension Reduction: Principal Component Analysis (PCA)
+    + [PCA main ideas in only 5 minutes!!!](https://www.youtube.com/watch?v=HMOI_lkzW08)

@@ -14,3 +14,4 @@
 + Classifiation: Decision Tree
     + [Entropy Clearly Explained!!!](https://www.youtube.com/watch?v=YtebGVx-Fxw&t=882s)
     + [Decision and Classification Trees, Clearly Explained!!!](https://www.youtube.com/watch?v=_L39rN6gz7Y)
++ Clustering: K-means

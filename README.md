@@ -9,6 +9,7 @@
 ## Topics
 
 + Classifiation: [KNN](./learn-knn.py)
+    + [K-nearest neighbors, Clearly Explained](https://www.youtube.com/watch?v=HVXime0nQeI&t=259s)
 + Classifiation: [Naive Bayes](./learn-naivebayes.py)
     + [Naive Bayes, Clearly Explained!!!](https://www.youtube.com/watch?v=O2L2Uv9pdDA)
     + [Gaussian Naive Bayes, Clearly Explained!!!](https://www.youtube.com/watch?v=H3EjCKtlVog)

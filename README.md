@@ -29,5 +29,8 @@
         + Use LangChain: When building complex applications requiring multiple steps, integrating various models and tools, and needing to manage custom workflows.
         + Use Hugging Face: For accessing pre-trained models, training and fine-tuning models, and developing straightforward NLP applications with ease.
     + RAG
-    + Fine tune LLM
+        + [How RAG works](./RAG.md)
+        + [Fine-tuning RAG](./RAGTuning.md)
+    + Finetuning a LLM
+        + [Methods of fine-tuning](./FineTuneLLM.md)
     + Build your own LLM

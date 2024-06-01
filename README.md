@@ -2,8 +2,7 @@
 
 ## References:
 + Book: https://www.google.com/books/edition/Data_Science_Algorithms_in_a_Week/Pel1DwAAQBAJ?hl=en&gbpv=1&printsec=frontcover
-+ Scikit Learn
-<img src="./scikit-learn_map.png" alt="plugin" style="zoom: 50%;" />
++ Scikit Learn <img src="./scikit-learn_map.png" alt="plugin" style="zoom: 50%;" />
 + Types of machine learning [explained](./MachineLearning.md)
 
 

@@ -26,6 +26,8 @@
 + Large Language Models [LLM](https://www.youtube.com/playlist?list=PLz-ep5RbHosU2hnz5ejezwaYpdMutMVB0)
     + Prompt engineering
     + OpenAI API, Huggingface, LangChain
+        + Use LangChain: When building complex applications requiring multiple steps, integrating various models and tools, and needing to manage custom workflows.
+        + Use Hugging Face: For accessing pre-trained models, training and fine-tuning models, and developing straightforward NLP applications with ease.
     + RAG
     + Fine tune LLM
     + Build your own LLM

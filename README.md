@@ -26,5 +26,6 @@
 + Large Language Models [LLM](https://www.youtube.com/playlist?list=PLz-ep5RbHosU2hnz5ejezwaYpdMutMVB0)
     + Prompt engineering
     + OpenAI API, Huggingface, LangChain
+    + RAG
     + Fine tune LLM
     + Build your own LLM

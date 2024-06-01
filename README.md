@@ -19,3 +19,8 @@
 + Regression: [Gradient Descend](./learn-regression-gradientdescend.py)
 + Dimension Reduction: Principal Component Analysis [PCA](./learn-pca-dimemreduction.py)
     + [PCA main ideas in only 5 minutes!!!](https://www.youtube.com/watch?v=HMOI_lkzW08)
++ Large Language Models [LLM](https://www.youtube.com/playlist?list=PLz-ep5RbHosU2hnz5ejezwaYpdMutMVB0)
+    + Prompt engineering
+    + OpenAI API, Huggingface, LangChain
+    + Fine tune LLM
+    + Build your own LLM

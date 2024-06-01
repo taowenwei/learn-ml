@@ -25,7 +25,7 @@
     + RAG
         + [How RAG works](./RAG.md)
         + [Fine-tuning RAG](./RAGTuning.md)
-    + Finetuning a LLM
+    + Fine-tuning a LLM
         + [Methods of fine-tuning](./FineTuneLLM.md)
     + Build your own LLM
 

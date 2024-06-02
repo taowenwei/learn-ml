@@ -18,7 +18,8 @@
         + [Gradient Descent, Step-by-Step](https://www.youtube.com/watch?v=sDv4f4s2SB8&t=1063s)
     + Dimension Reduction: Principal Component Analysis [PCA](./learn-pca-dimemreduction.py)
         + [PCA main ideas in only 5 minutes!!!](https://www.youtube.com/watch?v=HMOI_lkzW08)
-    + Auto ML automate data preprocessing, feature selection, model selection, hyperparameter tuning, and model evaluation.
+    + AutoML 
+        + AutoML automates data preprocessing, feature selection, model selection, hyperparameter tuning, and model evaluation.
         + [Google AutoML](https://cloud.google.com/vertex-ai/docs/beginner/beginners-guide?_gl=1*sxk3eq*_up*MQ..&gclid=CjwKCAjwjeuyBhBuEiwAJ3vuoVt6pz25to08norJPNRM8TU3zxRMoX5ZzB2GZsDb9gEj2STOrOnyDRoCZS8QAvD_BwE&gclsrc=aw.ds)
         + [auto-sklearn](https://automl.github.io/auto-sklearn/master/)
 + Large Language Models [LLM](https://www.youtube.com/playlist?list=PLz-ep5RbHosU2hnz5ejezwaYpdMutMVB0)

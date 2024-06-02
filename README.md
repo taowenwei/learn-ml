@@ -32,7 +32,7 @@
         + [Fine-tuning RAG](./RAGTuning.md)
     + Fine-tuning a LLM
         + [Methods of fine-tuning](./FineTuneLLM.md)
-    + [Build your own LLM](./https://towardsdatascience.com/a-complete-guide-to-write-your-own-transformers-29e23f371ddd)
+    + [Build your own LLM](https://towardsdatascience.com/a-complete-guide-to-write-your-own-transformers-29e23f371ddd)
 
 ## References:
 + Book: https://www.google.com/books/edition/Data_Science_Algorithms_in_a_Week/Pel1DwAAQBAJ?hl=en&gbpv=1&printsec=frontcover

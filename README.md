@@ -33,6 +33,7 @@
         + [Fine-tuning RAG](./RAGTuning.md)
     + Fine-tuning a LLM
         + [Methods of fine-tuning](./FineTuneLLM.md)
+        + [Unsloth fine-tuning jupyter books](https://github.com/unslothai/unsloth?tab=readme-ov-file)
     + [Build your own LLM](https://towardsdatascience.com/a-complete-guide-to-write-your-own-transformers-29e23f371ddd)
 
 ## References:

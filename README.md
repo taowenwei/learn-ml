@@ -32,6 +32,7 @@
                 + Bagging (Bootstrap Aggregating)
                 + Boosting
                 + Stacking
+        + [Model Evaluation and Hyperparameter Tuning](./Evaluation.md)
 + Large Language Models [LLM](https://www.youtube.com/playlist?list=PLz-ep5RbHosU2hnz5ejezwaYpdMutMVB0)
     + Prompt engineering
     + OpenAI API, Huggingface, LangChain, Ollama

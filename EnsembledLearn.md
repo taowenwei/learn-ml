@@ -1,3 +1,4 @@
+# Ensemble learning 
 Ensemble learning in `scikit-learn` refers to the technique of combining multiple machine learning models to improve overall performance. The idea is that by aggregating the predictions of several models, the ensemble can often achieve better accuracy and robustness than any single model. Ensemble methods can be broadly categorized into two main types: **bagging** and **boosting**.
 
 ### Types of Ensemble Learning

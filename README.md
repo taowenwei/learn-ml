@@ -3,6 +3,7 @@
 ## Topics
 
 + Machine Learning
+    + [Data preprocessing](./DataPreprocessing.md)
     + Classifiation: [KNN](./learn-knn.py)
         + [K-nearest neighbors, Clearly Explained](https://www.youtube.com/watch?v=HVXime0nQeI&t=259s)
     + Classifiation: [Naive Bayes](./learn-naivebayes.py)

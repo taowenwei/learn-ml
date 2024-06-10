@@ -2,7 +2,7 @@
 
 ## Topics
 
-+ Machine Learning
++ Machine Learning wiith Scikit-Learn
     + [Data preprocessing](./DataPreprocessing.md)
     + Classifiation: [KNN](./learn-knn.py)
         + [K-nearest neighbors, Clearly Explained](https://www.youtube.com/watch?v=HVXime0nQeI&t=259s)
@@ -23,6 +23,9 @@
         + AutoML automates data preprocessing, feature selection, model selection, hyperparameter tuning, and model evaluation.
         + [Google AutoML](https://cloud.google.com/vertex-ai/docs/beginner/beginners-guide?_gl=1*sxk3eq*_up*MQ..&gclid=CjwKCAjwjeuyBhBuEiwAJ3vuoVt6pz25to08norJPNRM8TU3zxRMoX5ZzB2GZsDb9gEj2STOrOnyDRoCZS8QAvD_BwE&gclsrc=aw.ds)
         + [auto-sklearn](https://automl.github.io/auto-sklearn/master/)
+    + Scikit Learn features
+        + [Pipeline](./scikit-pipeline.py)
+            + The scikit-learn pipeline streamlines and automates the machine learning workflow. It combines multiple steps of data preprocessing and modeling into a single object.
 + Large Language Models [LLM](https://www.youtube.com/playlist?list=PLz-ep5RbHosU2hnz5ejezwaYpdMutMVB0)
     + Prompt engineering
     + OpenAI API, Huggingface, LangChain, Ollama

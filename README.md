@@ -50,6 +50,8 @@
         + [Methods of fine-tuning](./FineTuneLLM.md)
         + [Unsloth fine-tuning jupyter books](https://github.com/unslothai/unsloth?tab=readme-ov-file)
     + [Build your own LLM](https://towardsdatascience.com/a-complete-guide-to-write-your-own-transformers-29e23f371ddd)
++ Using Colab (Cloud virtual machine + GPU + Jupyterbook) for ML and AI
+    + [Intro](https://www.youtube.com/watch?v=inN8seMm7UI)
 
 ## References:
 + Book: https://www.google.com/books/edition/Data_Science_Algorithms_in_a_Week/Pel1DwAAQBAJ?hl=en&gbpv=1&printsec=frontcover

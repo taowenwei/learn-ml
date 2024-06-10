@@ -26,8 +26,8 @@
     + Scikit Learn features
         + [Pipeline](./scikit-pipeline.py)
             + The scikit-learn pipeline streamlines and automates the machine learning workflow. It combines multiple steps of data preprocessing and modeling into a single object.
-        + Ensemble Learn
-            + Combining multiple machine learning models to improve overall performance. [Types](./EnsembledLearn.md),
+        + [Ensemble Learn](./EnsembledLearn.md)
+            + Combining multiple machine learning models to improve overall performance.
                 + [Majority Vote](./ensembled-learn.py)
                 + Bagging (Bootstrap Aggregating)
                 + Boosting

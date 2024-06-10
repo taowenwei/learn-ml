@@ -1,3 +1,4 @@
+# Evaluating and Fine-tuning
 Evaluating and fine-tuning a machine learning model in `scikit-learn` involves several steps, including splitting the data, selecting appropriate metrics, using cross-validation, and employing techniques such as grid search for hyperparameter tuning. Here’s a comprehensive guide to doing this:
 
 ### Step-by-Step Guide

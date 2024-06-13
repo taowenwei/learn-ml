@@ -60,5 +60,6 @@
 ## References:
 + Book: https://www.google.com/books/edition/Data_Science_Algorithms_in_a_Week/Pel1DwAAQBAJ?hl=en&gbpv=1&printsec=frontcover
 + Book: https://www.packtpub.com/product/machine-learning-with-pytorch-and-scikit-learn/9781801819312
++ Book: https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646
 + Scikit Learn <img src="./scikit-learn_map.png" alt="plugin" style="zoom: 50%;" />
 + Types of machine learning [explained](./MachineLearning.md)

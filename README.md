@@ -37,11 +37,13 @@
                 + Boosting
                 + Stacking
         + [Model Evaluation and Hyperparameter Tuning](./Evaluation.md)
-+ Neural Network Fundamentals
++ Artifical Neural Network (ANN) Fundamentals
     + [Neural network](https://www.youtube.com/watch?v=zxagGtF9MeU&list=PLblh5JKOoLUIxGDQs4LFFD--41Vzf-ME1)
     + Gradient Descent and Backpropagation
     + [Tensors and PyTorch](https://www.youtube.com/watch?v=EMXfZB8FVUA&list=PLqnslRFeH2UrcDBWF5mfPGpqQDSta6VK4)
-+ Large Language Models [LLM](https://www.youtube.com/playlist?list=PLz-ep5RbHosU2hnz5ejezwaYpdMutMVB0)
++ Deep Learning [DL](./DeepLearning.md)
++ Reinforcement Learning [RL](./ReinforcementLearning.md)
++ DL-RNN-Self Attention-Large Language Models [LLM](https://www.youtube.com/playlist?list=PLz-ep5RbHosU2hnz5ejezwaYpdMutMVB0)
     + Prompt engineering
     + OpenAI API, Huggingface, LangChain, Ollama
         + Use LangChain: When building complex applications requiring multiple steps, integrating various models and tools, and needing to manage custom workflows.

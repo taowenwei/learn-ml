@@ -45,7 +45,7 @@
 + Deep Learning [DL](./DeepLearning.md)
 + Reinforcement Learning [RL](./ReinforcementLearning.md)
 + DL-RNN-Self Attention-Large Language Models [LLM](https://www.youtube.com/playlist?list=PLz-ep5RbHosU2hnz5ejezwaYpdMutMVB0)
-    + Prompt engineering (e.g. Microsoft [Lida](https://github.com/microsoft/lida))
+    + Prompt engineering (e.g. Microsoft [Lida](https://github.com/microsoft/lida), [explained](./MicrosoftLida.md))
     + OpenAI API, Huggingface, LangChain, Ollama
         + Use LangChain: When building complex applications requiring multiple steps, integrating various models and tools, and needing to manage custom workflows.
         + Use Hugging Face: For accessing pre-trained models, training and fine-tuning models, and developing straightforward NLP applications with ease.
@@ -66,4 +66,3 @@
 + Book: https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646
 + Scikit Learn <img src="./scikit-learn_map.png" alt="plugin" style="zoom: 50%;" />
 + Types of machine learning [explained](./MachineLearning.md)
-+ uvicorn app debugging [How-To](./UvicornDebugging.md)

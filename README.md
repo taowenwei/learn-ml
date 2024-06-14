@@ -1,11 +1,12 @@
 # Machine Learning, AI, LLM study
 
-## Topics
+## Math Basics
+    + Statistics Fundamentals
+        + Histogram, mean, variance, standard deviations, and [more](./https://www.youtube.com/watch?v=qBigTkBLU6g&list=PLblh5JKOoLUK0FLuzwntyYI10UQFUhsY9)
+    + Linear Algebra Fundamentals
+        + [Essence of linear algebra](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)
 
-+ Statistics Fundamentals
-    + Histogram, mean, variance, standard deviations, and [more](./https://www.youtube.com/watch?v=qBigTkBLU6g&list=PLblh5JKOoLUK0FLuzwntyYI10UQFUhsY9)
-+ Linear Algebra Fundamentals
-    + [Essence of linear algebra](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)
+## Topics
 + Machine Learning wiith Scikit-Learn
     + [Data preprocessing](./DataPreprocessing.md)
     + Classifiation: [KNN](./learn-knn.py)
@@ -44,7 +45,7 @@
 + Deep Learning [DL](./DeepLearning.md)
 + Reinforcement Learning [RL](./ReinforcementLearning.md)
 + DL-RNN-Self Attention-Large Language Models [LLM](https://www.youtube.com/playlist?list=PLz-ep5RbHosU2hnz5ejezwaYpdMutMVB0)
-    + Prompt engineering
+    + Prompt engineering (e.g. Microsoft [Lida](https://github.com/microsoft/lida))
     + OpenAI API, Huggingface, LangChain, Ollama
         + Use LangChain: When building complex applications requiring multiple steps, integrating various models and tools, and needing to manage custom workflows.
         + Use Hugging Face: For accessing pre-trained models, training and fine-tuning models, and developing straightforward NLP applications with ease.

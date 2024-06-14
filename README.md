@@ -47,6 +47,7 @@
 + Reinforcement Learning [RL](./ReinforcementLearning.md)
 + DL-RNN-Self Attention-Large Language Models [LLM](https://www.youtube.com/playlist?list=PLz-ep5RbHosU2hnz5ejezwaYpdMutMVB0)
     + Prompt engineering (e.g. Microsoft [Lida](https://github.com/microsoft/lida) [explained](./MicrosoftLida.md))
+        + Prompt engineering [guide](https://www.promptingguide.ai/)
     + OpenAI API, Huggingface, LangChain, Ollama
         + Use LangChain: When building complex applications requiring multiple steps, integrating various models and tools, and needing to manage custom workflows.
         + Use Hugging Face: For accessing pre-trained models, training and fine-tuning models, and developing straightforward NLP applications with ease.

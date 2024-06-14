@@ -1,10 +1,10 @@
 # Machine Learning, AI, LLM study
 
 ## Math Basics
-    + Statistics Fundamentals
-        + Histogram, mean, variance, standard deviations, and [more](./https://www.youtube.com/watch?v=qBigTkBLU6g&list=PLblh5JKOoLUK0FLuzwntyYI10UQFUhsY9)
-    + Linear Algebra Fundamentals
-        + [Essence of linear algebra](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)
++ Statistics Fundamentals
+    + Histogram, mean, variance, standard deviations, and [more](./https://www.youtube.com/watch?v=qBigTkBLU6g&list=PLblh5JKOoLUK0FLuzwntyYI10UQFUhsY9)
++ Linear Algebra Fundamentals
+    + [Essence of linear algebra](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)
 
 ## Topics
 + Machine Learning wiith Scikit-Learn

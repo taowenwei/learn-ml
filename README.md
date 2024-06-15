@@ -8,7 +8,7 @@
     + [Art of Linear Algebra](https://github.com/kenjihiranabe/The-Art-of-Linear-Algebra/blob/main/The-Art-of-Linear-Algebra.pdf)
 
 ## Topics
-+ Machine Learning wiith Scikit-Learn
++ **Machine Learning wiith Scikit-Learn**
     + [Data preprocessing](./DataPreprocessing.md)
     + Classifiation: [KNN](./learn-knn.py)
         + [K-nearest neighbors, Clearly Explained](https://www.youtube.com/watch?v=HVXime0nQeI&t=259s)
@@ -39,13 +39,13 @@
                 + Boosting
                 + Stacking
         + [Model Evaluation and Hyperparameter Tuning](./Evaluation.md)
-+ Artifical Neural Network (ANN) Fundamentals
++ **Artifical Neural Network (ANN) Fundamentals**
     + [Neural network](https://www.youtube.com/watch?v=zxagGtF9MeU&list=PLblh5JKOoLUIxGDQs4LFFD--41Vzf-ME1)
     + Gradient Descent and Backpropagation
     + [Tensors and PyTorch](https://www.youtube.com/watch?v=EMXfZB8FVUA&list=PLqnslRFeH2UrcDBWF5mfPGpqQDSta6VK4)
-+ Deep Learning [DL](./DeepLearning.md)
-+ Reinforcement Learning [RL](./ReinforcementLearning.md)
-+ DL-RNN-Self Attention-Large Language Models [LLM](https://www.youtube.com/playlist?list=PLz-ep5RbHosU2hnz5ejezwaYpdMutMVB0)
++ **Deep Learning** [DL](./DeepLearning.md)
++ **Reinforcement Learning** [RL](./ReinforcementLearning.md)
++ **DL-RNN-Self Attention-Large Language Models** [LLM](https://www.youtube.com/playlist?list=PLz-ep5RbHosU2hnz5ejezwaYpdMutMVB0)
     + Prompt engineering (e.g. Microsoft [Lida](https://github.com/microsoft/lida) [explained](./MicrosoftLida.md))
         + Prompt engineering [guide](https://www.promptingguide.ai/)
     + OpenAI API, Huggingface, LangChain, Ollama
@@ -59,7 +59,7 @@
         + [Methods of fine-tuning](./FineTuneLLM.md)
         + [Unsloth fine-tuning jupyter books](https://github.com/unslothai/unsloth?tab=readme-ov-file)
     + [Build your own LLM](https://towardsdatascience.com/a-complete-guide-to-write-your-own-transformers-29e23f371ddd)
-+ Using Colab (Cloud virtual machine + GPU + Jupyterbook) for ML and AI
++ **Using Colab** (Cloud virtual machine + GPU + Jupyterbook) for ML and AI
     + [Intro](https://www.youtube.com/watch?v=inN8seMm7UI)
 
 ## References:

@@ -64,9 +64,9 @@
 
 ## References:
 + Book: https://www.google.com/books/edition/Data_Science_Algorithms_in_a_Week/Pel1DwAAQBAJ?hl=en&gbpv=1&printsec=frontcover
-+ Book: https://www.packtpub.com/product/machine-learning-with-pytorch-and-scikit-learn/9781801819312
-+ Book: https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646
-+ Book: https://download.bibis.ir/Books/Artificial-Intelligence/Deep-Learning/2021/Deep%20Learning%20with%20Python%20by%20Franc%CC%A7ois%20Chollet_bibis.ir.pdf
++ Book (Scikit+PyTorch): https://www.packtpub.com/product/machine-learning-with-pytorch-and-scikit-learn/9781801819312
++ Book (Scikit+TensorFlow): https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646
++ Book (TensorFlow+Keras): https://download.bibis.ir/Books/Artificial-Intelligence/Deep-Learning/2021/Deep%20Learning%20with%20Python%20by%20Franc%CC%A7ois%20Chollet_bibis.ir.pdf
 + Scikit Learn <img src="./scikit-learn_map.png" alt="plugin" style="zoom: 50%;" />
 + Types of machine learning [explained](./MachineLearning.md)
 + Tensorflow vs.Keras [compared](./TensorFlowKeras.md)

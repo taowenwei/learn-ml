@@ -1,9 +1,9 @@
 # Machine Learning, AI, LLM study
 
 ## Math Basics
-+ Statistics Fundamentals
++ **Statistics Fundamentals**
     + Histogram, mean, variance, standard deviations, and [more](./https://www.youtube.com/watch?v=qBigTkBLU6g&list=PLblh5JKOoLUK0FLuzwntyYI10UQFUhsY9)
-+ Linear Algebra Fundamentals
++ **Linear Algebra Fundamentals**
     + [Essence of linear algebra](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)
     + [Art of Linear Algebra](https://github.com/kenjihiranabe/The-Art-of-Linear-Algebra/blob/main/The-Art-of-Linear-Algebra.pdf)
 

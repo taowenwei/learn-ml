@@ -21,4 +21,6 @@ https://github.com/microsoft/autogen
 
 ## LangChain
 
-1. [Financial Agent with LangGraph](./agent-financial.py)
+1. [Financial Agent with LangGraph](./agent-financial.py) 
+    + Integrate a third party API (i.e. [polygon.io](https://polygon.io/)) as Tool(s)
+    + Use [LangGraph](https://langchain-ai.github.io/langgraphjs/tutorials/) to costruct a cyclic loop between agent and its tools

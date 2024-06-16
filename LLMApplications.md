@@ -1,5 +1,5 @@
 ## GPT Researcher
-GPT Researcher is an autonomous agent designed for comprehensive online research on a variety of tasks.
+GPT Researcher is an autonomous agent designed for comprehensive online research on a variety of tasks. [Example](./agent-gpt-researcher.py)
 
 https://github.com/assafelovic/gpt-researcher?tab=readme-ov-file
 
@@ -18,3 +18,7 @@ https://github.com/microsoft/lida
 AutoGen is a framework that enables the development of LLM applications using multiple agents that can converse with each other to solve tasks.
 
 https://github.com/microsoft/autogen
+
+## LangChain
+
+1. [Financial Agent with LangGraph](./agent-financial.py)

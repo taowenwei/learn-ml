@@ -57,7 +57,8 @@
         + [Fine-tuning RAG](./RAGTuning.md)
     + Fine-tuning a LLM
         + [Methods of fine-tuning](./FineTuneLLM.md)
-        + [Unsloth fine-tuning jupyter books](https://github.com/unslothai/unsloth?tab=readme-ov-file)
+        + PEFT Tuning: [Unsloth fine-tuning jupyter books](https://github.com/unslothai/unsloth?tab=readme-ov-file)
+            + [Example](https://www.youtube.com/watch?v=WxQbWTRNTxY)
     + [Build your own LLM](https://towardsdatascience.com/a-complete-guide-to-write-your-own-transformers-29e23f371ddd)
     + [LLM Applications](./LLMApplications.md)
 + **Using Colab** (Cloud virtual machine + GPU + Jupyterbook) for ML and AI

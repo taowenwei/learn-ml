@@ -10,7 +10,8 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "envFile": "${workspaceFolder}/.envrc"
+            "envFile": "${workspaceFolder}/.envrc",
+            "justMyCode": false,
         }
     ]
 }

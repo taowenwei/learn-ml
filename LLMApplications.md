@@ -25,4 +25,5 @@ https://github.com/microsoft/autogen
     + Integrate a third party API (i.e. [polygon.io](https://polygon.io/)) as Tool(s)
     + Use [LangGraph](https://langchain-ai.github.io/langgraphjs/tutorials/) to costruct a cyclic loop between agent and its tools
 
-2. [SQL Agent](https://github.com/TheAILearner/Langchain-Agents/blob/main/SQL_Agent_with_LLama3.ipynb)
+2. ReAct(Reasoning and Acting) Agent
+    + [SQL Agent](./agent-sql.py)

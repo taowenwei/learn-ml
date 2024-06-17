@@ -1,6 +1,6 @@
 # Application of LLM uses
 
-## RAG
+## Retrieval-Augmented Generation (RAG)
 RAG combines the capabilities of retrieval-based systems and generative models to provide more accurate and context-aware responses.
 
 1. [How RAG works](./RAG.md)

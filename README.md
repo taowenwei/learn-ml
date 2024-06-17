@@ -52,9 +52,6 @@
         + Use LangChain: When building complex applications requiring multiple steps, integrating various models and tools, and needing to manage custom workflows.
         + Use Hugging Face: For accessing pre-trained models, training and fine-tuning models, and developing straightforward NLP applications with ease.
         + Use Ollama: Provides a seamless way to run open-source LLMs locally. Use Ollama in [Google Codelab](https://blog.gopenai.com/run-ollama-llama3-llm-on-google-colab-9b56b7254be9)
-    + RAG
-        + [How RAG works](./RAG.md)
-        + [Fine-tuning RAG](./RAGTuning.md)
     + Fine-tuning a LLM
         + [Methods of fine-tuning](./FineTuneLLM.md)
         + PEFT Tuning: [Unsloth fine-tuning jupyter books](https://github.com/unslothai/unsloth?tab=readme-ov-file)

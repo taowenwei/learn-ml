@@ -1,3 +1,12 @@
+# Application of LLM uses
+
+## RAG
+RAG combines the capabilities of retrieval-based systems and generative models to provide more accurate and context-aware responses.
+
+1. [How RAG works](./RAG.md)
+
+2. [Fine-tuning RAG](./RAGTuning.md)
+
 ## GPT Researcher
 GPT Researcher is an autonomous agent designed for comprehensive online research on a variety of tasks. [Example](./agent-gpt-researcher.py)
 

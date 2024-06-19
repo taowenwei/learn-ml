@@ -3,6 +3,7 @@ from langgraph.checkpoint.sqlite import SqliteSaver
 from langgraph.prebuilt import create_react_agent
 from langchain_core.tools import StructuredTool, ToolException
 from langchain_openai import ChatOpenAI
+from langchain.globals import set_debug
 
 
 def get_weather(location: str) -> str:
@@ -37,6 +38,9 @@ config = {'configurable': {'thread_id': '1234'}}
 system_prompt = 'You are a helpful bot named Fred. Only use the `get-weather` tool when weather is asked'
 # add interrupt before executing a tool
 # interrupt_before = ['tools']
+
+# most verbose setting with fully log raw inputs and outputs.
+set_debug(True)
 
 agent = create_react_agent(
     model, tools,  # interrupt_before=interrupt_before,

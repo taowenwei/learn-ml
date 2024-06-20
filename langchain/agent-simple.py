@@ -5,6 +5,8 @@ from langchain_core.tools import StructuredTool, ToolException
 from langchain_openai import ChatOpenAI
 from langchain.globals import set_debug
 
+# Build an Agent
+# https://python.langchain.com/v0.2/docs/tutorials/agents/
 
 def get_weather(location: str) -> str:
     '''Return the weather forecast for the specified location.'''
@@ -27,20 +29,21 @@ def execute(agent, question, config):
             message.pretty_print()
 
 
-# add tool
+# add tool - https://python.langchain.com/v0.2/docs/how_to/custom_tools/
 tools = [StructuredTool.from_function(
-    func=get_weather, handle_tool_error=True)]
+    func=get_weather, handle_tool_error=True, )]
 model = ChatOpenAI(model='gpt-3.5-turbo')
 # add memory
 memory = SqliteSaver.from_conn_string(':memory:')
 config = {'configurable': {'thread_id': '1234'}}
 # add simple prompt
 system_prompt = 'You are a helpful bot named Fred. Only use the `get-weather` tool when weather is asked'
+
 # add interrupt before executing a tool
 # interrupt_before = ['tools']
 
 # most verbose setting with fully log raw inputs and outputs.
-set_debug(True)
+# set_debug(True)
 
 agent = create_react_agent(
     model, tools,  # interrupt_before=interrupt_before,

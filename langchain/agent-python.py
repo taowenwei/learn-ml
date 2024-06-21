@@ -24,7 +24,6 @@ def agentExecutorImpl(question):
     agent_executor.invoke({"input": question})
 
 
-
 def reactAgentImpl(question):
     from langgraph.checkpoint.sqlite import SqliteSaver
     from langgraph.prebuilt import create_react_agent
@@ -68,5 +67,5 @@ def reactAgentImpl(question):
 
 
 question = "What is the 10th fibonacci number?"
-agentExecutorImpl(question)
-#reactAgentImpl(question)
+# agentExecutorImpl(question)
+reactAgentImpl(question)

@@ -1,5 +1,6 @@
 from langchain import hub
 from langchain_openai import ChatOpenAI
+from langchain_experimental.tools import PythonREPLTool
 
 model = ChatOpenAI(temperature=0)
 
@@ -7,7 +8,6 @@ model = ChatOpenAI(temperature=0)
 def agentExecutorImpl(question):
     from langchain.agents import AgentExecutor
     from langchain.agents import create_openai_functions_agent
-    from langchain_experimental.tools import PythonREPLTool
 
     tools = [PythonREPLTool()]
 
@@ -47,6 +47,8 @@ def reactAgentImpl(question):
 
     def run_python(query: str) -> str:
         '''Return the python code for the specified query.'''
+        # pyREPL = PythonREPLTool()
+        # pyREPL._run(query)
         return 0
 
     tools = [StructuredTool.from_function(

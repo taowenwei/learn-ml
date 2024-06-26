@@ -3,7 +3,10 @@ from IPython.display import Image, display
 
 def graph2png(graph):
     try:
-        display(Image(graph.get_graph().draw_mermaid_png()))
+        img = Image(graph.get_graph().draw_mermaid_png())
+        # display(img)
+        with open('graph.png', 'wb') as f:
+            f.write(img.data)
     except Exception:
         # This requires some extra dependencies and is optional
         pass

@@ -12,35 +12,6 @@ from langchain_openai import ChatOpenAI
 from langchain_core.runnables import Runnable, RunnableConfig
 
 
-@tool
-def get_movies_movies_get(year: Optional[int] = None) -> str:
-    '''Get all movies or movies by a release year'''
-
-    url = 'http://localhost:4000/movies'
-    if year != None:
-        url += f'?year={year}'
-    response = requests.get(url)
-    return response.json()
-
-
-@tool
-def get_movie_by_id_movies__id__get(id: int) -> dict:
-    '''Get movie by Id'''
-
-    url = f'http://localhost:4000/movies/{id}'
-    response = requests.get(url)
-    return response.json()
-
-
-@tool
-def get_movie_years_movies_years__get(year: Optional[int] = None) -> list[int]:
-    '''Get all moovie release years'''
-
-    url = 'http://localhost:4000/movies/years/'
-    response = requests.get(url)
-    return response.json()
-
-
 class Assistant:
     prompt = ChatPromptTemplate.from_messages(
         [
@@ -53,6 +24,32 @@ class Assistant:
             ),
             ('user', '{user}'),
         ])
+
+    @tool
+    def get_movies_movies_get(year: Optional[int] = None) -> str:
+        '''Get all movies or movies by a release year'''
+
+        url = 'http://localhost:4000/movies'
+        if year != None:
+            url += f'?year={year}'
+        response = requests.get(url)
+        return response.json()
+
+    @tool
+    def get_movie_by_id_movies__id__get(id: int) -> dict:
+        '''Get movie by Id'''
+
+        url = f'http://localhost:4000/movies/{id}'
+        response = requests.get(url)
+        return response.json()
+
+    @tool
+    def get_movie_years_movies_years__get(year: Optional[int] = None) -> list[int]:
+        '''Get all moovie release years'''
+
+        url = 'http://localhost:4000/movies/years/'
+        response = requests.get(url)
+        return response.json()
 
     tools = [get_movies_movies_get,
              get_movie_by_id_movies__id__get,

@@ -3,6 +3,7 @@ from typing import List, Optional
 import uvicorn
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
+from pydantic import BaseModel
 
 app = FastAPI()
 
@@ -45,11 +46,14 @@ def get_movie_by_id(id: int):
 def get_movie_years():
     return list(set(movie["year"] for movie in movies))
 
+class Movie(BaseModel):
+    title: str
+    year: int
 
 @app.post("/movies", response_model=dict)
-def create_movie(title: str, year: int):
+def create_movie(movie: Movie):
     movie_id = len(movies) + 1
-    new_movie = {"id": movie_id, "title": title, "year": year}
+    new_movie = {"id": movie_id, "title": movie.title, "year": movie.year}
     movies.append(new_movie)
     return new_movie
 

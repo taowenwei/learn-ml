@@ -1,5 +1,4 @@
-from typing import Annotated, Literal, Optional
-from typing_extensions import TypedDict
+from typing import Optional
 from langgraph.graph.message import AnyMessage, add_messages
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.tools import tool
@@ -13,14 +12,18 @@ from langchain_core.runnables import Runnable, RunnableConfig
 
 
 class Assistant:
+    BaseUrl = 'http://localhost:4000'
+
     prompt = ChatPromptTemplate.from_messages(
         [
             (
                 'system',
-                'You are a specialized assistant for movie records. You can, '
-                '1. use the `get_movies_movies_get` tool to get all movies or all movies of a release year'
-                '2. use the `get_movie_by_id_movies__id__get` tool to get a movie by its id'
-                '3. use the `get_movie_years_movies_years__get` tool to get all movie release years'
+                '''You are a specialized assistant for movie records. You can,
+                1. use the `get_movies_movies_get` tool to get all movies or all movies of a release year
+                2. use the `get_movie_by_id_movies__id__get` tool to get a movie by its id
+                3. use the `get_movie_years_movies_years__get` tool to get all movie release years
+                
+                Now answer your question'''
             ),
             ('user', '{user}'),
         ])
@@ -29,9 +32,8 @@ class Assistant:
     def get_movies_movies_get(year: Optional[int] = None) -> str:
         '''Get all movies or movies by a release year'''
 
-        url = 'http://localhost:4000/movies'
-        if year != None:
-            url += f'?year={year}'
+        url = f'{Assistant.BaseUrl}/movies' + \
+            (f'?year={year}' if year != None else '')
         response = requests.get(url)
         return response.json()
 
@@ -39,16 +41,14 @@ class Assistant:
     def get_movie_by_id_movies__id__get(id: int) -> dict:
         '''Get movie by Id'''
 
-        url = f'http://localhost:4000/movies/{id}'
-        response = requests.get(url)
+        response = requests.get(f'{Assistant.BaseUrl}/movies/{id}')
         return response.json()
 
     @tool
     def get_movie_years_movies_years__get(year: Optional[int] = None) -> list[int]:
         '''Get all moovie release years'''
 
-        url = 'http://localhost:4000/movies/years/'
-        response = requests.get(url)
+        response = requests.get(f'{Assistant.BaseUrl}/movies/years/')
         return response.json()
 
     tools = [get_movies_movies_get,
@@ -76,6 +76,10 @@ graph = builder.compile(checkpointer=SqliteSaver.from_conn_string(':memory:'))
 
 # utils.graph2png(graph)
 
-user_input = 'can you get me all the movies released on 2008?'
 config = {'configurable': {'thread_id': '1'}}
+# user_input = 'can you get me all the movies released on 2008?'
+# utils.graphStream(graph, config, user_input)
+# user_input = 'can you get me all the movies\' release years?'
+# utils.graphStream(graph, config, user_input)
+user_input = 'can you get me the movie with id=2?'
 utils.graphStream(graph, config, user_input)

@@ -6,12 +6,7 @@ from langgraph.graph import StateGraph
 from langgraph.graph.message import add_messages
 from langgraph.prebuilt import ToolNode, tools_condition
 from langchain_openai import ChatOpenAI
-
 import utils
-
-
-class State(TypedDict):
-    messages: Annotated[list, add_messages]
 
 
 tools = [TavilySearchResults(max_results=2)]
@@ -19,11 +14,11 @@ llm = ChatOpenAI(model='gpt-3.5-turbo')
 llm_with_tools = llm.bind_tools(tools)
 
 
-def chatbot(state: State):
+def chatbot(state: utils.State):
     return {"messages": [llm_with_tools.invoke(state["messages"])]}
 
 
-builder = StateGraph(State)
+builder = StateGraph(utils.State)
 builder.add_node("chatbot", chatbot)
 builder.add_node("tools", ToolNode(tools=tools))
 builder.add_conditional_edges(

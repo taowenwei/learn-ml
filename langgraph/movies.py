@@ -22,6 +22,7 @@ class Assistant:
                 1. use the `get_movies_movies_get` tool to get all movies or all movies of a release year
                 2. use the `get_movie_by_id_movies__id__get` tool to get a movie by its id
                 3. use the `get_movie_years_movies_years__get` tool to get all movie release years
+                4. use the `create_movie_movies_post` tool to create a new movie
                 
                 Now answer your question'''
             ),

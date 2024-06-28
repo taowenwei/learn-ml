@@ -16,14 +16,13 @@ movies = [
 ]
 
 
-@app.exception_handler(RequestValidationError)
-async def validation_exception_handler(request: Request, exc: RequestValidationError):
-    exc_str = f'{exc}'.replace('\n', ' ').replace('   ', ' ')
-    content = {'status_code': 10422, 'message': exc_str, 'data': None}
-    return JSONResponse(content=content, status_code=status.HTTP_422_UNPROCESSABLE_ENTITY)
+class Movie(BaseModel):
+    id: int = None
+    title: str
+    year: int
 
 
-@app.get("/movies", response_model=List[dict])
+@app.get("/movies", response_model=List[Movie], summary="Get all movies or all movies of a given release year")
 def get_movies(year: int = None):
     if year != None:
         movies_by_year = [movie for movie in movies if movie["year"] == year]
@@ -34,7 +33,7 @@ def get_movies(year: int = None):
     return movies
 
 
-@app.get("/movies/{id}", response_model=dict)
+@app.get("/movies/{id}", response_model=Movie, summary='Get a movie by its Id')
 def get_movie_by_id(id: int):
     movie = next((movie for movie in movies if movie["id"] == id), None)
     if not movie:
@@ -42,20 +41,18 @@ def get_movie_by_id(id: int):
     return movie
 
 
-@app.get("/movies/years/", response_model=List[int])
+@app.get("/movies/years/", response_model=List[int], summary='Get all movie release years')
 def get_movie_years():
     return list(set(movie["year"] for movie in movies))
 
-class Movie(BaseModel):
-    title: str
-    year: int
 
-@app.post("/movies", response_model=dict)
+@app.post("/movies", response_model=Movie, summary='Get all movie release years')
 def create_movie(movie: Movie):
     movie_id = len(movies) + 1
     new_movie = {"id": movie_id, "title": movie.title, "year": movie.year}
     movies.append(new_movie)
     return new_movie
+
 
 # http://127.0.0.1:4000/openapi.json for Open API spec
 if __name__ == "__main__":

@@ -4,8 +4,10 @@ import uvicorn
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
+from fastapi.openapi.utils import get_openapi
+import json
 
-app = FastAPI()
+app = FastAPI(title='manager of movie records')
 
 # Mock data
 movies = [
@@ -53,6 +55,15 @@ def create_movie(movie: Movie):
     movies.append(new_movie)
     return new_movie
 
+def toOpenAPISpec():
+    with open('openapi.json', 'w') as f:
+        json.dump(get_openapi(
+            title=app.title,
+            version=app.version,
+            openapi_version=app.openapi_version,
+            description=app.description,
+            routes=app.routes,
+        ), f)
 
 # http://127.0.0.1:4000/openapi.json for Open API spec
 if __name__ == "__main__":

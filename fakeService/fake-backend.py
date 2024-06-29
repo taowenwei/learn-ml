@@ -55,6 +55,7 @@ def create_movie(movie: Movie):
     movies.append(new_movie)
     return new_movie
 
+
 def toOpenAPISpec():
     with open('openapi.json', 'w') as f:
         json.dump(get_openapi(
@@ -64,6 +65,7 @@ def toOpenAPISpec():
             description=app.description,
             routes=app.routes,
         ), f)
+
 
 # http://127.0.0.1:4000/openapi.json for Open API spec
 if __name__ == "__main__":

@@ -12,6 +12,18 @@
             "console": "integratedTerminal",
             "envFile": "${workspaceFolder}/.envrc",
             "justMyCode": false,
+        },
+        {
+            "name": "Python Debugger: OpenApi2Tools",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/openapi2tools/openapi2tools/tool.py",
+            "console": "integratedTerminal",
+            "envFile": "${workspaceFolder}/.envrc",
+            "args": [
+                "${workspaceFolder}/openapi2tools/examples/openapi.json"
+            ],
+            "justMyCode": false,
         }
     ]
 }

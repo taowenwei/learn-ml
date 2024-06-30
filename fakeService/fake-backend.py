@@ -1,13 +1,11 @@
-from fastapi import FastAPI, Request, HTTPException, status
-from typing import List, Optional
+from fastapi import FastAPI, HTTPException
+from typing import List
 import uvicorn
-from fastapi.exceptions import RequestValidationError
-from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from fastapi.openapi.utils import get_openapi
 import json
 
-app = FastAPI(title='manager of movie records')
+app = FastAPI(title='Movies', description='manager movie records')
 
 # Mock data
 movies = [
@@ -34,7 +32,7 @@ class Movie(BaseModel):
     id: int = None
     title: str
     year: int
-    Comments: list = None
+
 
 class Comment(BaseModel):
     id: int = None
@@ -42,7 +40,7 @@ class Comment(BaseModel):
 
 
 @ app.get("/movies", response_model=List[Movie], summary="Get all movies or all movies of a given release year")
-def get_movies(year: int = None):
+def get_movies(year: int = None, sort: bool = None):
     if year != None:
         movies_by_year = [movie for movie in movies if movie["year"] == year]
         if not movies_by_year:
@@ -87,7 +85,7 @@ def create_movie(movie: Movie):
 
 
 def toOpenAPISpec():
-    with open('openapi.json', 'w') as f:
+    with open('output/openapi.json', 'w') as f:
         json.dump(get_openapi(
             title=app.title,
             version=app.version,
@@ -99,6 +97,7 @@ def toOpenAPISpec():
 # http://127.0.0.1:4000/openapi.json for Open API spec, or just call below
 
 # toOpenAPISpec()
+
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=4000)

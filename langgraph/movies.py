@@ -36,11 +36,15 @@ graph = builder.compile(checkpointer=SqliteSaver.from_conn_string(':memory:'))
 # utils.graph2png(graph)
 
 config = {'configurable': {'thread_id': '1'}}
+while True:
+    user_input = input('You: ')
+    if user_input == '.exit':
+        print('bye bye')
+        break
+    utils.graphStream(graph, config, user_input)
+
+
 # user_input = 'can you get me all the movies released on 2008?'
-# utils.graphStream(graph, config, user_input)
 # user_input = 'can you get me all the movies\' release years?'
-# utils.graphStream(graph, config, user_input)
 # user_input = 'can you get me the movie with id=2?'
-# utils.graphStream(graph, config, user_input)
-user_input = 'can you add a new movie with title="Despicable Me 4", year=2024?'
-utils.graphStream(graph, config, user_input)
+# user_input = 'can you add a new movie with title="Despicable Me 4", year=2024?'

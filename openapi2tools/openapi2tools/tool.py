@@ -93,11 +93,17 @@ def genTools(indent, clzName, paths, components):
             return indentCode(indent, lines)
         return ''
 
-    def genSuccess(indent):
-        return ''
-
-    def genFailure(indent):
-        return ''
+    def genResponse(indent, methodBody):
+        statuses = methodBody['responses'].keys()
+        lines = []
+        for index, status in enumerate(statuses):
+            if index == 0:
+                lines.append(f'if response.status_code == {status}:')
+            else:
+                lines.append(f'elif response.status_code == {status}:')
+            lines.append(f"    return '{methodBody['responses'][status]['description']}' + '\\n\\n' + json.dumps(response.json(), indent = 2)")
+        lines.append(f"return f'Request failed with status code: {{response.status_code}}'")
+        return indentCode(indent, lines)
 
     def genTool(clzName, path, method, methodBody, components):
         print(f'    generating tool for {path} {method}')
@@ -108,9 +114,7 @@ def {methodBody['operationId']}({genToolParameters(methodBody, components)}) -> 
     '''{methodBody['summary']}'''
     {genHttpBody(4, methodBody, components)}
     response = requests.{method}({clzName}.BaseUrl + {genHttpPath(path, methodBody)}, headers={clzName}.HttpHeader{', json=data' if 'requestBody' in methodBody and methodBody['requestBody']['required'] else ''})
-    {genSuccess(4)}
-    {genFailure(4)}
-    return response.json()
+    {genResponse(4, methodBody)}
         """
         lines = tool.split('\n')[1:]
         return '\n'.join(lines)
@@ -156,9 +160,11 @@ def convert(apiSpec):
     clzBody = f"""
 from typing import Optional
 import requests
+import json
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.tools import tool
 from langchain_core.runnables import RunnableConfig
+
 
 class {clzName}:
 

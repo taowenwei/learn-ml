@@ -29,7 +29,7 @@ class MoviesApi:
             
             Now answer your question'''
         ),
-        ('user', '{user}'),
+        ("placeholder", "{messages}"),
     ])
 
     @tool
@@ -102,8 +102,9 @@ class MoviesApi:
         self.runnable = MoviesApi.prompt | llm.bind_tools(MoviesApi.tools)
 
     def __call__(self, state, config: RunnableConfig):
-        configuration = config.get("configurable", {})
+        configuration = config.get("configurable")
         MoviesApi.BaseUrl = configuration.get('url', None)
         MoviesApi.HttpHeader['Authorization'] = configuration.get('token', None)
-        return {'messages': [self.runnable.invoke(state['messages'])]}
+        result = self.runnable.invoke(state)
+        return {'messages': result}
     

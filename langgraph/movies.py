@@ -1,21 +1,8 @@
-from typing import Optional
-from langgraph.graph.message import AnyMessage, add_messages
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.tools import tool
-import requests
-from langgraph.graph import END, StateGraph
+from langgraph.graph import StateGraph
 from langgraph.prebuilt import tools_condition
 from langgraph.checkpoint.sqlite import SqliteSaver
 import utils
 from langchain_openai import ChatOpenAI
-from langchain_core.runnables import Runnable, RunnableConfig
-
-
-from typing import Optional
-import requests
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.tools import tool
-from langchain_core.runnables import RunnableConfig
 import moviesApi
 
 
@@ -35,7 +22,7 @@ graph = builder.compile(checkpointer=SqliteSaver.from_conn_string(':memory:'))
 
 # utils.graph2png(graph)
 
-config = {'recursion_limit': 4, # fail early
+config = {'recursion_limit': 10,  # fail early
           'configurable': {'thread_id': '1',
                            'url': 'http://localhost:4000', 'token': '1234567890'}}
 while True:
@@ -46,7 +33,7 @@ while True:
     utils.graphStream(graph, config, user_input)
 
 
-# user_input = 'can you get me all the movies released on 2008?'
-# user_input = 'can you get me all the movies\' release years?'
-# user_input = 'can you get me the movie with id=2?'
-# user_input = 'can you add a new movie with title="Despicable Me 4", year=2024?'
+# user_input = 'get all the movies released on 2008'
+# user_input = 'retrieve all the movie release years'
+# user_input = 'get the movie with id=2'
+# user_input = 'create a new movie with title="Despicable Me 4", year=2024'

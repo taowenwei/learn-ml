@@ -185,7 +185,7 @@ class {clzName}:
             
             Now answer your question'''
         ),
-        ('user', '{{user}}'),
+         ("placeholder", "{{messages}}"),
     ])
 
     {genTools(4, clzName, paths, components)}
@@ -198,10 +198,11 @@ class {clzName}:
         self.runnable = {clzName}.prompt | llm.bind_tools({clzName}.tools)
 
     def __call__(self, state, config: RunnableConfig):
-        configuration = config.get("configurable", {{}})
+        configuration = config.get("configurable")
         {clzName}.BaseUrl = configuration.get('url', None)
         {clzName}.HttpHeader['Authorization'] = configuration.get('token', None)
-        return {{'messages': [self.runnable.invoke(state['messages'])]}}
+        result = self.runnable.invoke(state)
+        return {{'messages': result}}
     """
 
     lines = clzBody.split('\n')[1:]

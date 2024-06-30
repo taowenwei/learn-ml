@@ -36,7 +36,7 @@ class MoviesApi:
     def get_movies_movies_get(year: Optional[int], sort: Optional[bool]) -> list:
         '''Get all movies or all movies of a given release year'''
         
-        response = requests.get(MoviesApi.BaseUrl + '/movies?' + (f'year={year}' if year != None else '') + '&' + (f'sort={sort}' if sort != None else ''), headers=MoviesApi.HttpHeader)
+        response = requests.get(MoviesApi.BaseUrl + f'/movies?' + (f'year={year}' if year != None else '') + '&' + (f'sort={sort}' if sort != None else ''), headers=MoviesApi.HttpHeader)
         if response.status_code == 200:
             return 'Successful Response' + '\n\n' + json.dumps(response.json(), indent = 2)
         elif response.status_code == 422:
@@ -51,7 +51,7 @@ class MoviesApi:
             'title': title, 
             'year': year, 
         }
-        response = requests.post(MoviesApi.BaseUrl + '/movies', headers=MoviesApi.HttpHeader, json=data)
+        response = requests.post(MoviesApi.BaseUrl + f'/movies', headers=MoviesApi.HttpHeader, json=data)
         if response.status_code == 200:
             return 'Successful Response' + '\n\n' + json.dumps(response.json(), indent = 2)
         elif response.status_code == 422:
@@ -62,7 +62,7 @@ class MoviesApi:
     def get_movie_by_id_movies__id__get(id: int) -> dict:
         '''Get a movie by its Id'''
         
-        response = requests.get(MoviesApi.BaseUrl + '/movies/{id}', headers=MoviesApi.HttpHeader)
+        response = requests.get(MoviesApi.BaseUrl + f'/movies/{id}', headers=MoviesApi.HttpHeader)
         if response.status_code == 200:
             return 'Successful Response' + '\n\n' + json.dumps(response.json(), indent = 2)
         elif response.status_code == 422:
@@ -73,7 +73,7 @@ class MoviesApi:
     def get_movie_by_id_comment_by_cid_movies__id__comments__cid__get(id: int, cid: int) -> dict:
         '''From a movie of id, get one of its comments of cid'''
         
-        response = requests.get(MoviesApi.BaseUrl + '/movies/{id}/comments/{cid}', headers=MoviesApi.HttpHeader)
+        response = requests.get(MoviesApi.BaseUrl + f'/movies/{id}/comments/{cid}', headers=MoviesApi.HttpHeader)
         if response.status_code == 200:
             return 'Successful Response' + '\n\n' + json.dumps(response.json(), indent = 2)
         elif response.status_code == 422:
@@ -84,7 +84,7 @@ class MoviesApi:
     def get_movie_years_movies_years__get() -> list:
         '''Get all movie release years'''
         
-        response = requests.get(MoviesApi.BaseUrl + '/movies/years/', headers=MoviesApi.HttpHeader)
+        response = requests.get(MoviesApi.BaseUrl + f'/movies/years/', headers=MoviesApi.HttpHeader)
         if response.status_code == 200:
             return 'Successful Response' + '\n\n' + json.dumps(response.json(), indent = 2)
         return f'Request failed with status code: {response.status_code}'

@@ -35,7 +35,9 @@ graph = builder.compile(checkpointer=SqliteSaver.from_conn_string(':memory:'))
 
 # utils.graph2png(graph)
 
-config = {'configurable': {'thread_id': '1', 'url': 'http://localhost:4000', 'token': '1234567890'}}
+config = {'recursion_limit': 4, # fail early
+          'configurable': {'thread_id': '1',
+                           'url': 'http://localhost:4000', 'token': '1234567890'}}
 while True:
     user_input = input('You: ')
     if user_input == '.exit':

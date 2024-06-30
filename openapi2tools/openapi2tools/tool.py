@@ -77,8 +77,8 @@ def genTools(indent, clzName, paths, components):
             queries = list(filter(lambda query: query != '', queries))
             queries = list(map(lambda query: f'({query})', queries))
             if len(queries) > 0:
-                return f"'{path}?' + " + " + '&' + ".join(queries)
-        return f"'{path}'"
+                return f"f'{path}?' + " + " + '&' + ".join(queries)
+        return f"f'{path}'"
 
     def genHttpBody(indent, methodBody, components):
         if 'requestBody' in methodBody and methodBody['requestBody']['required']:

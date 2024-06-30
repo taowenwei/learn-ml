@@ -168,7 +168,7 @@ from langchain_core.runnables import RunnableConfig
 
 class {clzName}:
 
-    BaseUrl = 'http://localhost:4000'
+    BaseUrl = 'YOUR_API_END_POINT'
 
     HttpHeader = {{
             'Content-Type': 'application/json',
@@ -198,6 +198,9 @@ class {clzName}:
         self.runnable = {clzName}.prompt | llm.bind_tools({clzName}.tools)
 
     def __call__(self, state, config: RunnableConfig):
+        configuration = config.get("configurable", {{}})
+        {clzName}.BaseUrl = configuration.get('url', None)
+        {clzName}.HttpHeader['Authorization'] = configuration.get('token', None)
         return {{'messages': [self.runnable.invoke(state['messages'])]}}
     """
 

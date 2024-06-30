@@ -8,7 +8,7 @@ from langchain_core.runnables import RunnableConfig
 
 class MoviesApi:
 
-    BaseUrl = 'http://localhost:4000'
+    BaseUrl = 'YOUR_API_END_POINT'
 
     HttpHeader = {
             'Content-Type': 'application/json',
@@ -102,5 +102,8 @@ class MoviesApi:
         self.runnable = MoviesApi.prompt | llm.bind_tools(MoviesApi.tools)
 
     def __call__(self, state, config: RunnableConfig):
+        configuration = config.get("configurable", {})
+        MoviesApi.BaseUrl = configuration.get('url', None)
+        MoviesApi.HttpHeader['Authorization'] = configuration.get('token', None)
         return {'messages': [self.runnable.invoke(state['messages'])]}
     

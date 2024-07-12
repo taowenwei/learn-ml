@@ -14,3 +14,14 @@
 1. structured output with schema, by using `llm.with_structured_output`
 2. python code generation for execution with `exec`
 3. conditional edge for node path routing, by using `add_conditional_edges`
+
+## Database assistant
+
+Is it better to actually export database to csv(s) before-hand and with table joins completed. Benefits
+1. processing csv is way easier
+2. after export, data schema is fixed, (perfect for schema-less, Document-based database)
+3. after table joins, the semantic of data is aggrgated into one place.
+
+## Graph RAG
+
+Need to understand knowledge graph first.

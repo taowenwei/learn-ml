@@ -1,7 +1,7 @@
 # LangGraph Tutorials
 
 ## intro
-[intro](./intro.py) show cases,
+[intro](./intro.py) shows cases,
 
 1. basic chatbot with LangGraph
 2. chat with an agent
@@ -9,15 +9,14 @@
 4. `checkpointer` as chat history
 
 ## code assistant
-[code assistant](./code-assist.py) show case,
+[code assistant](./code-assist.py) shows cases,
 
 1. structured output with schema, by using `llm.with_structured_output`
 2. python code generation for execution with `exec`
 3. conditional edge for node path routing, by using `add_conditional_edges`
 
-## Database assistant
-
-Is it better to actually export database to csv(s) before-hand and with table joins completed. Benefits
+## mongoDB assistant
+[mongo assistant](./mongo.py) performs query and aggregation, but is it better to actually export database to csv(s) before-hand and with table joins completed? Benefits,
 1. processing csv is way easier
 2. after export, data schema is fixed, (perfect for schema-less, Document-based database)
 3. after table joins, the semantic of data is aggrgated into one place.

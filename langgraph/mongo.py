@@ -11,6 +11,8 @@ from langchain_core.runnables import RunnableConfig
 import os
 from pymongo import MongoClient
 import certifi
+import json
+import utils
 
 
 class MongoAssistant:
@@ -28,7 +30,9 @@ class MongoAssistant:
             + provide the `mongo_query` tool a collection name and a query JSON to perform a mongoDB query
             + provide the `mongo_aggregate` tool a collection name and an aggregation JSON to perform a mongoDB aggregation
 
-            Now answer your question and output a query result as JSON'''
+            Now answer your question and output a query result as JSON.
+            
+            If you receive an error from the tools, apologizes and ask for a next question'''
             ),
             ("placeholder", "{messages}"),
         ])
@@ -39,12 +43,25 @@ class MongoAssistant:
                              tlsCAFile=certifi.where())
         return client[MongoAssistant.databaseName]
 
+    @classmethod
+    def humanIntervene(cls, collectionName: str, query: object):
+        print(
+            f'The following query will be used with the {collectionName} collection,')
+        print("'''json")
+        print(json.dumps(query, indent=2))
+        print("'''")
+        print()
+        userInput = input('Are you sure to contine (y/n) ')
+        if userInput != 'y':
+            raise ValueError("User rejected")
+
     @tool
     def mongo_query(collectionName: str, query: object) -> list:
         '''Perfom a simple mongodb query'''
-    
+
         database = MongoAssistant.connect()
         collection = database[collectionName]
+        MongoAssistant.humanIntervene(collectionName, query)
         return list(collection.find(query))
 
     @tool
@@ -53,6 +70,7 @@ class MongoAssistant:
 
         database = MongoAssistant.connect()
         collection = database[collectionName]
+        MongoAssistant.humanIntervene(collectionName, aggregation)
         return list(collection.aggregate(aggregation))
 
     tools = [
@@ -80,7 +98,7 @@ class State(TypedDict):
 llm = ChatOpenAI(model='gpt-3.5-turbo')
 builder = StateGraph(State)
 builder.add_node('mongoAssistant', MongoAssistant(llm))
-builder.add_node('tools', ToolNode(MongoAssistant.tools))
+builder.add_node('tools', utils.toolNodeWithFallback(MongoAssistant.tools))
 builder.add_conditional_edges(
     'mongoAssistant',
     tools_condition,

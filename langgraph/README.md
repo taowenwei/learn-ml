@@ -21,6 +21,12 @@
 2. after export, data schema is fixed, (perfect for schema-less, Document-based database)
 3. after table joins, the semantic of data is aggrgated into one place.
 
+Database agents feel more pertinent to a OLAP situation than a OLTP one.
+
 ## Graph RAG
 
 Need to understand knowledge graph first.
+
+## LLM and Agents in General
+
+I believe it shall take examples from a mobile devices and its apps, whereas LLM is the device/the platform, and the agents are installable apps.

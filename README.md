@@ -40,8 +40,10 @@
                 + Stacking
         + [Model Evaluation and Hyperparameter Tuning](./Evaluation.md)
 + **Artifical Neural Network (ANN) Fundamentals**
-    + [Neural network](https://www.youtube.com/watch?v=zxagGtF9MeU&list=PLblh5JKOoLUIxGDQs4LFFD--41Vzf-ME1)
-    + Gradient Descent and Backpropagation
+    + [Neural network](https://www.youtube.com/playlist?list=PLblh5JKOoLUIxGDQs4LFFD--41Vzf-ME1)
+        + The Chain Rule
+        + Gradient Descent
+        + Backpropagation
     + [Tensors and PyTorch](https://www.youtube.com/watch?v=EMXfZB8FVUA&list=PLqnslRFeH2UrcDBWF5mfPGpqQDSta6VK4)
 + **Deep Learning** [DL](./DeepLearning.md)
 + **Reinforcement Learning** [RL](./ReinforcementLearning.md)

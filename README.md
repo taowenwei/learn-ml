@@ -47,6 +47,7 @@
             + Compute the sum of squared residuals (SSR) from the delta between observed and predicted result
             + Using the `Chain Rule` to compute partial derivatives of all hyperparameters (HPs) toward the SSR
             + Apply learning rate and update all HPs
+                + new value of HPi = old value of HPi - learning rate * partial derivative of HPi
             + Try `Gradient Descent` to find global minimum
     + [Tensors and PyTorch](https://www.youtube.com/watch?v=EMXfZB8FVUA&list=PLqnslRFeH2UrcDBWF5mfPGpqQDSta6VK4)
 + **Deep Learning** [DL](./DeepLearning.md)

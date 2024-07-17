@@ -42,8 +42,12 @@
 + **Artifical Neural Network (ANN) Fundamentals**
     + [Neural network](https://www.youtube.com/playlist?list=PLblh5JKOoLUIxGDQs4LFFD--41Vzf-ME1)
         + The Chain Rule
-        + Gradient Descent
+        + Gradient Descent - learning rate
         + Backpropagation
+            + compute the sum of squared residuals (SSR) from the delta between observed and predicted result
+            + compute partial derivatives of all hyperparameters (HPs) toward the SSR
+            + apply learning rate and update all HPs
+            + use Gradient Descent to try to find global minimum
     + [Tensors and PyTorch](https://www.youtube.com/watch?v=EMXfZB8FVUA&list=PLqnslRFeH2UrcDBWF5mfPGpqQDSta6VK4)
 + **Deep Learning** [DL](./DeepLearning.md)
 + **Reinforcement Learning** [RL](./ReinforcementLearning.md)

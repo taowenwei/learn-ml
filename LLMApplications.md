@@ -7,6 +7,8 @@ RAG combines the capabilities of retrieval-based systems and generative models t
 
 2. [Fine-tuning RAG](./RAGTuning.md)
 
+3. [Graph RAG](https://github.com/microsoft/graphrag) - knowledge graph with the neo4j database
+
 ## GPT Researcher
 GPT Researcher is an autonomous agent designed for comprehensive online research on a variety of tasks. [Example](./agent-gpt-researcher.py)
 

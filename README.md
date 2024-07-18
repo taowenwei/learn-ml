@@ -42,7 +42,7 @@
 + **Artifical Neural Network (ANN) Fundamentals**
     + [Neural network](https://www.youtube.com/playlist?list=PLblh5JKOoLUIxGDQs4LFFD--41Vzf-ME1)
         + The Chain Rule
-        + Gradient Descent - learning rate
+        + Gradient Descent - learning rate, [challenges](./GradientDescent.md)
         + Backpropagation
             + Compute the sum of squared residuals (SSR) from the delta between observed and predicted result
             + Using the `Chain Rule` to compute partial derivatives of all hyperparameters (HPs) toward the SSR

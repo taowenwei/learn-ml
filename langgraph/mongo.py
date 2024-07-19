@@ -86,7 +86,7 @@ class State(TypedDict):
 
 
 # build a LangGraph graph with an agent, tools and memory
-llm = ChatOpenAI(model='gpt-3.5-turbo')
+llm = ChatOpenAI(model='gpt-4o-mini') #'gpt-3.5-turbo'
 builder = StateGraph(State)
 builder.add_node('mongoAssistant', MongoAssistant(llm))
 builder.add_node('tools', utils.toolNodeWithFallback(MongoAssistant.tools))

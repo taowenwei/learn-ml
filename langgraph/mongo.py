@@ -25,14 +25,15 @@ class MongoAssistant:
         [
             (
                 'system',
-                '''You are a mongoDB specialist. You can,
+                '''You are a mongoDB specialist. 
+                
+                You always use aggregration for query. 
+                
+                You have the `mongo_aggregate` tool to perform a mongoDB aggregation
 
-            + provide the `mongo_query` tool a collection name and a query JSON to perform a mongoDB query
-            + provide the `mongo_aggregate` tool a collection name and an aggregation JSON to perform a mongoDB aggregation
-
-            Now answer your question and output a query result as JSON.
+                Now answer your question and output a query result as JSON.
             
-            If you receive an error from the tools, apologizes and ask for a next question'''
+                If you receive an error from the tools, apologizes and ask for a next question'''
             ),
             ("placeholder", "{messages}"),
         ])
@@ -56,15 +57,6 @@ class MongoAssistant:
             raise ValueError("User rejected")
 
     @tool
-    def mongo_query(collectionName: str, query: object) -> list:
-        '''Perfom a simple mongodb query'''
-
-        database = MongoAssistant.connect()
-        collection = database[collectionName]
-        MongoAssistant.humanIntervene(collectionName, query)
-        return list(collection.find(query))
-
-    @tool
     def mongo_aggregate(collectionName: str, aggregation: object) -> list:
         '''Perfom a simple mongodb aggregation'''
 
@@ -74,7 +66,6 @@ class MongoAssistant:
         return list(collection.aggregate(aggregation))
 
     tools = [
-        mongo_query,
         mongo_aggregate,
     ]
 

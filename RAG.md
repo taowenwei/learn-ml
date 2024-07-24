@@ -3,15 +3,16 @@ RAG combines the capabilities of retrieval-based systems and generative models t
 
 Here's how RAG using LLM works:
 
-1. **Retrieval Component**: The retrieval component is responsible for retrieving relevant passages or documents from a large corpus of text based on the input query or context. This component typically uses techniques like TF-IDF, BM25, or dense vector retrieval to find the most relevant documents.
+1. **Indexing**: A pipeline for ingesting data from a source and indexing it.
+<img src="./rag_indexing.png" alt="plugin" style="zoom: 50%;" />
 
-2. **Generative Model (LLM)**: The generative model, often an LLM like GPT, is responsible for generating the final response based on the retrieved passages and the input query or context. Unlike traditional generative models, which generate responses from scratch, the LLM in RAG is conditioned on the retrieved passages to produce contextually relevant outputs.
+2. **Retrieval Component**: The retrieval component is responsible for retrieving relevant passages or documents from a large corpus of text based on the input query or context. This component typically uses techniques like TF-IDF, BM25, or dense vector retrieval to find the most relevant documents.
+<img src="./rag_retrieval_generation.png" alt="plugin" style="zoom: 50%;" />
 
-3. **Integration**: The retrieved passages are typically concatenated with the input query or context and provided as input to the generative model. This combined input serves as the context for the generative model, guiding its response generation process.
+3. **Generative Model (LLM)**: The generative model, often an LLM like GPT, is responsible for generating the final response based on the retrieved passages and the input query or context. During inference, the RAG model first retrieves relevant passages based on the input query or context. These passages are then used to condition the generative model, which generates the final response. The generated response is typically a combination of information from the retrieved passages and the model's own knowledge and language generation capabilities.
 
 4. **Fine-tuning and Training**: RAG models can be fine-tuned or trained end-to-end to optimize both the retrieval and generation components for specific tasks or domains. Fine-tuning may involve using task-specific data or objectives to adapt the model to the target application.
 
-5. **Inference**: During inference, the RAG model first retrieves relevant passages based on the input query or context. These passages are then used to condition the generative model, which generates the final response. The generated response is typically a combination of information from the retrieved passages and the model's own knowledge and language generation capabilities.
 
 RAG using LLMs offers several advantages over traditional generative models:
 

@@ -3,7 +3,7 @@ RAG combines the capabilities of retrieval-based systems and generative models t
 
 Here's how RAG using LLM works:
 
-1. **Indexing**: A pipeline for ingesting data from a source and indexing it.
+1. **Indexing**: A pipeline for ingesting data from a source and indexing it. Then the indexed result is saved in a vector database for search in the next step. Vector search is a common way to store and search over unstructured data (such as unstructured text). The idea is to store numeric vectors that are associated with the text. Given a query, we can embed it as a vector of the same dimension and use vector similarity metrics to identify related data in the store.
 <img src="./rag_indexing.png" alt="plugin" style="zoom: 50%;" />
 
 2. **Retrieval Component**: The retrieval component is responsible for retrieving relevant passages or documents from a large corpus of text based on the input query or context. This component typically uses techniques like TF-IDF, BM25, or dense vector retrieval to find the most relevant documents.

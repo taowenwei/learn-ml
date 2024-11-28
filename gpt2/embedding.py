@@ -66,9 +66,13 @@ class TextEmbedding:
         inputs, targets = next(dataIter)
         print("Token IDs:\n", inputs)
         # print("\nInputs shape:\n", inputs.shape)
+        
+        # 2.7 Creating token embeddings
         tokenEmbeddings = self.tokenEmbeddingLayer(inputs)
         print("Embeddings:\n", tokenEmbeddings)
         # print("\nEmbeddings shape:\n", tokenEmbeddings.shape)
+        
+        # 2.8 Encoding word positions
         inputEmbeddings = tokenEmbeddings + self.positionEmbeddings
         print("Input embeddings:\n", inputEmbeddings)
 

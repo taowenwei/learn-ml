@@ -58,7 +58,7 @@ class CausalAttention(torch.nn.Module):
         )
 
     def forward(self, inputs):
-        b, numTokens, inputDims = inputs.shape
+        batchSize, numTokens, inputDims = inputs.shape
         keys = self.keyW(inputs)
         queries = self.queryW(inputs)
         values = self.valueW(inputs)
@@ -94,35 +94,35 @@ class MultiHeadAttention1(torch.nn.Module):
 # 3.6.2 Implementing multi-head attention with weight splits = more efficient than MultiHeadAttention1
 class MultiHeadAttention2(torch.nn.Module):
     def __init__(self, inputDims, outputDims,
-                 context_length, dropout, numHeads, qkvBias=False):
+                 contextLength, dropout, numHeads, qkvBias=False):
         super().__init__()
         assert (outputDims % numHeads == 0), \
             "outputDims must be divisible by numHeads"
 
         self.outputDims = outputDims
         self.numHeads = numHeads
-        self.head_dim = outputDims // numHeads
-        self.W_query = torch.nn.Linear(inputDims, outputDims, bias=qkvBias)
-        self.W_key = torch.nn.Linear(inputDims, outputDims, bias=qkvBias)
-        self.W_value = torch.nn.Linear(inputDims, outputDims, bias=qkvBias)
-        self.out_proj = torch.nn.Linear(outputDims, outputDims)
+        self.headDims = outputDims // numHeads
+        self.queryW = torch.nn.Linear(inputDims, outputDims, bias=qkvBias)
+        self.keyW = torch.nn.Linear(inputDims, outputDims, bias=qkvBias)
+        self.valueW = torch.nn.Linear(inputDims, outputDims, bias=qkvBias)
+        self.outProjection = torch.nn.Linear(outputDims, outputDims)
         self.dropout = torch.nn.Dropout(dropout)
         self.register_buffer(
             "mask",
-            torch.triu(torch.ones(context_length, context_length),
+            torch.triu(torch.ones(contextLength, contextLength),
                        diagonal=1)
         )
 
     def forward(self, inputs):
-        b, numTokens, inputDims = inputs.shape
-        keys = self.W_key(inputs)
-        queries = self.W_query(inputs)
-        values = self.W_value(inputs)
+        batchSize, numTokens, inputDims = inputs.shape
+        keys = self.keyW(inputs)
+        queries = self.queryW(inputs)
+        values = self.valueW(inputs)
 
-        keys = keys.view(b, numTokens, self.numHeads, self.head_dim)
-        values = values.view(b, numTokens, self.numHeads, self.head_dim)
+        keys = keys.view(batchSize, numTokens, self.numHeads, self.headDims)
+        values = values.view(batchSize, numTokens, self.numHeads, self.headDims)
         queries = queries.view(
-            b, numTokens, self.numHeads, self.head_dim
+            batchSize, numTokens, self.numHeads, self.headDims
         )
 
         keys = keys.transpose(1, 2)
@@ -139,7 +139,7 @@ class MultiHeadAttention2(torch.nn.Module):
 
         contextVector = (attnWeights @ values).transpose(1, 2)
         contextVector = contextVector.contiguous().view(
-            b, numTokens, self.outputDims
+            batchSize, numTokens, self.outputDims
         )
-        contextVector = self.out_proj(contextVector)
+        contextVector = self.outProjection(contextVector)
         return contextVector

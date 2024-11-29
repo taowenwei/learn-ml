@@ -48,7 +48,6 @@ class TextEmbedding:
             drop_last=dropLast,
             num_workers=numWorkers)
 
-        torch.manual_seed(123)
         # BPE tokenizer (tiktoken.get_encoding("gpt2")) vocabulary size is 50257
         vocabSize = 50257
         outputDim = 256
@@ -77,7 +76,4 @@ class TextEmbedding:
         print("Input embeddings:\n", inputEmbeddings)
 
 
-embedding = TextEmbedding(
-    batchSize=1, maxLength=4, stride=1, shuffle=False)
-dataIter = embedding.dataIter()
-embedding.processOneBatch(dataIter)
+

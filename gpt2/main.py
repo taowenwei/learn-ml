@@ -25,10 +25,10 @@ def generate_text_simple(model, idx,
     return idx
 
 
-# based on the startText, generate the next two words
+# based on the startText, generate the next 6 tokens
 startText = "Hello, I am"
 encoded = tokenizer.encode(startText)
-print("encoded:", encoded)
+print(f"\nencoded '{startText}':", encoded)
 idx = torch.tensor(encoded).unsqueeze(0)
 print("encoded_tensor.shape:", idx.shape)
 
@@ -36,10 +36,10 @@ model.eval()
 out = generate_text_simple(
     model=model,
     idx=idx,
-    maxTokenLen=4 + 2,
+    maxTokenLen=6,
     contextLength=gpt2LLM.GPT_CONFIG_124M["contextLength"]
 )
-print("Output:", out)
+print("\nOutput:", out)
 print("Output length:", len(out[0]))
 endText = tokenizer.decode(out.squeeze(0).tolist())
 print(endText)

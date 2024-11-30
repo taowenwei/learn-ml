@@ -140,7 +140,7 @@ def generateTextSimple(model, textTokens,
             logits = model(chunk)
 
         logits = logits[:, -1, :]
-        probas = torch.softmax(logits, dim=-1)
-        token = torch.argmax(probas, dim=-1, keepdim=True)
+        probas = torch.softmax(logits, dim=-1) # obtain probability row vector for each input token
+        token = torch.argmax(probas, dim=-1, keepdim=True) # locate the index with the highest probability
         textTokens = torch.cat((textTokens, token), dim=1)
     return textTokens

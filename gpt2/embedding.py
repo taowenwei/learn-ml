@@ -76,4 +76,11 @@ class TextEmbedding:
         print("Input embeddings:\n", inputEmbeddings)
 
 
+def text2token(tokenizer, text):
+    encoded = tokenizer.encode(text)
+    encodedTensor = torch.tensor(encoded).unsqueeze(0)
+    return encodedTensor
 
+def token2text(tokenizer, token):
+    flat = token.squeeze(0)
+    return tokenizer.decode(flat.tolist())

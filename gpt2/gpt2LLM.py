@@ -10,7 +10,7 @@ GPT_CONFIG_124M = {
     "numHeads": 12,             # Number of attention heads
     "numLayers": 12,            # Number of layers
     "dropRate": 0.1,            # Dropout rate
-    "qkvBias": False           # Query-Key-Value bias
+    "qkvBias": False            # Query-Key-Value bias
 }
 
 
@@ -33,8 +33,10 @@ class LayerNorm(nn.Module):
 class GPTModel(nn.Module):
     def __init__(self, cfg):
         super().__init__()
-        self.tokenEmbeddings = nn.Embedding(cfg["vocabSize"], cfg["embeddingDims"])
-        self.positionEmbeddings = nn.Embedding(cfg["contextLength"], cfg["embeddingDims"])
+        self.tokenEmbeddings = nn.Embedding(
+            cfg["vocabSize"], cfg["embeddingDims"])
+        self.positionEmbeddings = nn.Embedding(
+            cfg["contextLength"], cfg["embeddingDims"])
         self.dropoutEmbeddings = nn.Dropout(cfg["dropRate"])
         self.transformerBlocks = nn.Sequential(
             *[TransformerBlock(cfg) for _ in range(cfg["numLayers"])])
@@ -60,7 +62,8 @@ class GPTModel(nn.Module):
         print("Model details:")
         totalParams = sum(p.numel() for p in self.parameters())
         print(f"  Total number of parameters: {totalParams:,}")
-        print("  Token embedding layer shape:", self.tokenEmbeddings.weight.shape)
+        print("  Token embedding layer shape:",
+              self.tokenEmbeddings.weight.shape)
         print("  Output layer shape:", self.outHead.weight.shape)
         gpt2TotalParams = (
             totalParams - sum(p.numel()
@@ -127,3 +130,17 @@ class TransformerBlock(nn.Module):
         x = self.dropShortcut(x)
         x = x + shortcut
         return x
+
+
+def generateTextSimple(model, textTokens,
+                       maxTokenToGenerate, contextLength):
+    for _ in range(maxTokenToGenerate):
+        chunk = textTokens[:, -contextLength:]
+        with torch.no_grad():
+            logits = model(chunk)
+
+        logits = logits[:, -1, :]
+        probas = torch.softmax(logits, dim=-1)
+        token = torch.argmax(probas, dim=-1, keepdim=True)
+        textTokens = torch.cat((textTokens, token), dim=1)
+    return textTokens

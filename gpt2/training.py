@@ -57,6 +57,7 @@ class Trainer:
         )
         return loss
 
+    # 5.1.3 Calculating the training and validation set losses
     def computeInitLoss(self):
         def calcLoss(dataLoader, numBatches=None):
             totalLoss = 0.

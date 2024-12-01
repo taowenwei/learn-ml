@@ -24,3 +24,13 @@ with torch.no_grad():
     valLoss = trainer.calcLoss(trainer.valLoader)
     print("Training loss:", trainLoss)
     print("Validation loss:", valLoss)
+
+# 5.2 Training an LLM
+optimizer = torch.optim.AdamW(
+    model.parameters(),
+    lr=0.0004, weight_decay=0.1
+)
+trainer.train(optimizer,
+              numEpochs=10, evalFreq=5, evalIter=5,
+              startInput="Every effort moves you"
+              )

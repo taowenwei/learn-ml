@@ -1,6 +1,6 @@
 import torch
 import gpt2LLM
-import training
+import trainer
 
 
 torch.manual_seed(123)
@@ -17,7 +17,7 @@ def initModel(gptConfig):
 
 
 model = initModel(gptConfig)
-trainer = training.Trainer(model, gptConfig)
+trainer = trainer.Trainer(model, gptConfig)
 
 optimizer = torch.optim.AdamW(
     model.parameters(),

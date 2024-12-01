@@ -1,6 +1,6 @@
 import torch
 import gpt2LLM
-import training
+import trainer
 
 
 torch.manual_seed(123)
@@ -17,7 +17,7 @@ gptConfig = {**gpt2LLM.GPT_CONFIG_124M}
 gptConfig["contextLength"] = 256
 model = initModel(gptConfig)
 
-trainer = training.Trainer(model, gptConfig)
+trainer = trainer.Trainer(model, gptConfig)
 # 5.1.3 Calculating the training and validation set losses
 with torch.no_grad():
     trainLoss = trainer.calcLoss(trainer.trainLoader)

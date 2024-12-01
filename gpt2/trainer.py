@@ -87,11 +87,12 @@ class Trainer:
 
     def generateForEpoch(self, startInput):
         self.model.eval()
+        contextSize = self.model.positionEmbeddings.weight.shape[0]
         encoded = text2token(self.tokenizer, startInput).to(self.device)
         with torch.no_grad():
             token_ids = generateTextSimple(
                 model=self.model, textTokens=encoded,
-                maxTokenToGenerate=50, contextLength=self.contextLength
+                maxTokenToGenerate=50, contextLength=contextSize
             )
         decoded_text = token2text(self.tokenizer, token_ids)
         print(decoded_text.replace("\n", " "))

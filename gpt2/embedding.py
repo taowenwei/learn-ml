@@ -23,35 +23,31 @@ class GPTDatasetV1(Dataset):
         return self.inputIds[idx], self.targetIds[idx]
 
 
-class DataLoaderMaker:
+class TokenDataLoader(DataLoader):
     def __init__(self, textData, batchSize=4, maxLength=256,
                  stride=128, shuffle=True, dropLast=True,
                  numWorkers=0):
         tokenizer = tiktoken.get_encoding("gpt2")  # 1
         dataset = GPTDatasetV1(textData, tokenizer, maxLength, stride)
-        self.dataloader = DataLoader(
+        super().__init__(
             dataset=dataset,
             batch_size=batchSize,
             shuffle=shuffle,
             drop_last=dropLast,
             num_workers=numWorkers)
 
-    def getLoader(self):
-        return self.dataloader
-
 
 class TextEmbedding:
     def __init__(self, textData, batchSize=4, maxLength=256,
                  stride=128, shuffle=True, dropLast=True,
                  numWorkers=0):
-        maker = DataLoaderMaker(textData,
+        self.dataLoader = TokenDataLoader(textData,
                                 batchSize=batchSize,
                                 maxLength=maxLength,
                                 stride=stride,
                                 shuffle=shuffle,
                                 dropLast=dropLast,
                                 numWorkers=numWorkers)
-        self.dataLoader = maker.getLoader()
 
         # BPE tokenizer (tiktoken.get_encoding("gpt2")) vocabulary size is 50257
         vocabSize = 50257

@@ -18,4 +18,9 @@ gptConfig["contextLength"] = 256
 model = initModel(gptConfig)
 
 trainer = training.Trainer(model, gptConfig)
-trainer.computeInitLoss()
+# 5.1.3 Calculating the training and validation set losses
+with torch.no_grad():
+    trainLoss = trainer.calcLoss(trainer.trainLoader)
+    valLoss = trainer.calcLoss(trainer.valLoader)
+    print("Training loss:", trainLoss)
+    print("Validation loss:", valLoss)

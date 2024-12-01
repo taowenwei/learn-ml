@@ -18,4 +18,12 @@ def initModel(gptConfig):
 
 model = initModel(gptConfig)
 trainer = training.Trainer(model, gptConfig)
-trainer.computeInitLoss()
+
+optimizer = torch.optim.AdamW(
+    model.parameters(),
+    lr=0.0004, weight_decay=0.1
+)
+trainer.train(optimizer,
+              numEpochs=10, evalFreq=5, evalIter=5,
+              startInput="Every effort moves you"
+              )

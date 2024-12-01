@@ -1,29 +1,26 @@
 import torch
 import gpt2LLM
-import trainer
-
+from embedding import TokenDataLoader, text2token, token2text
+import tiktoken
 
 torch.manual_seed(123)
 
+device = torch.device(
+    "cuda" if torch.cuda.is_available() else "cpu")
+checkpoint = torch.load("gpt2_model.pth", map_location=device)
+tokenizer = tiktoken.get_encoding("gpt2")
+
 gptConfig = {**gpt2LLM.GPT_CONFIG_124M}
-gptConfig["contextLength"] = 256
+gptConfig["qkvBias"] = True
+gpt2 = gpt2LLM.GPTModel(gptConfig)
+gpt2.to(device)
+gpt2.load_state_dict(torch.load("gpt2_model.pth", map_location=device))
 
-
-def initModel(gptConfig):
-    model = gpt2LLM.GPTModel(gptConfig)
-    model.modelParamsInfo()
-    model.eval()
-    return model
-
-
-model = initModel(gptConfig)
-trainer = trainer.Trainer(model, gptConfig)
-
-optimizer = torch.optim.AdamW(
-    model.parameters(),
-    lr=0.0004, weight_decay=0.1
+gpt2.eval()
+output = gpt2LLM.generateTextSimple(
+    model=gpt2,
+    textTokens=text2token(tokenizer, "Every effort moves you").to(device),
+    maxTokenToGenerate=25,
+    contextLength=gptConfig["contextLength"],
 )
-trainer.train(optimizer,
-              numEpochs=10, evalFreq=5, evalIter=5,
-              startInput="Every effort moves you"
-              )
+print("Output text:\n", token2text(tokenizer, output))

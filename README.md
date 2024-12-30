@@ -6,7 +6,7 @@
 + **Linear Algebra Fundamentals**
     + [Essence of linear algebra](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)
     + [Art of Linear Algebra](https://github.com/kenjihiranabe/The-Art-of-Linear-Algebra/blob/main/The-Art-of-Linear-Algebra.pdf)
-+ **Visualizarion for Math**
++ **Visualization for Math**
     + Animated math - [Manim](https://github.com/ManimCommunity/manim)
     + Data visualization - [Matplotlib](https://matplotlib.org/)
         + Seaborn - Built on top of Matplotlib, designed for statistical graphics.

@@ -68,6 +68,7 @@
         + PEFT Tuning: [Unsloth fine-tuning jupyter books](https://github.com/unslothai/unsloth?tab=readme-ov-file)
             + [Example](https://www.youtube.com/watch?v=WxQbWTRNTxY)
     + [Build your own LLM](https://towardsdatascience.com/a-complete-guide-to-write-your-own-transformers-29e23f371ddd)
+        + [Visualize GPT](https://bbycroft.net/llm)
     + [LLM Applications](./LLMApplications.md)
 + **Using Colab** (Cloud virtual machine + GPU + Jupyterbook) for ML and AI
     + [Intro](https://www.youtube.com/watch?v=inN8seMm7UI)
